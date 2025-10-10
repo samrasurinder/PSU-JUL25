@@ -1,0 +1,16 @@
+cd /u02/app/oracle/product/19.3.0/db_1
+rm -rf OPatch
+unzip /nonproddatabase/oracle/software/PSU/JUL2025/$(hostname)/p6880880_190000_Linux-x86-64.zip
+cd OPatch
+./opatch version
+cd /nonproddatabase/oracle/software/PSU/JUL2025/$(hostname)
+
+cd /u02/app/19.3.0/grid
+rm -rf OPatch
+unzip /nonproddatabase/oracle/software/PSU/JUL2025/$(hostname)/p6880880_190000_Linux-x86-64.zip
+cd /u02/app/19.3.0/grid
+chown -R grid:oinstall OPatch
+su - grid
+cd /u02/app/19.3.0/grid/OPatch
+./opatch version
+cd /nonproddatabase/oracle/software/PSU/JUL2025/$(hostname)
